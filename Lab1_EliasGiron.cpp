@@ -24,9 +24,10 @@ void captcha (string numeros){
 void captcha2 (string numeros){
 	int suma = 0;
 	int espacios = numeros.length()/2;
-	for(int i = 0; i < numeros.length()/2 - 1; i++){
+	for(int i = 0; i < numeros.length()/2; i++){
 		if(numeros[i] == numeros[espacios+i]){
-			suma += numeros[i] - '0'*2;
+			suma += (numeros[i] - '0')+(numeros[i] - '0');
+
 		}
 	}
 	cout << "La suma es: "<<suma<<endl;
@@ -48,7 +49,7 @@ int main(){
 			case 1:
 				cout <<"Ingrese una opcion \n"
 				       "1. Captcha 1\n"
-				       "2. Captcha 2";
+				       "2. Captcha 2: "<<endl;
 				cin >> opcion_captcha;
 				switch (opcion_captcha){
 					case 1:
