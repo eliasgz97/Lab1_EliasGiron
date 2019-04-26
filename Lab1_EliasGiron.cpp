@@ -24,14 +24,9 @@ void captcha (string numeros){
 void captcha2 (string numeros){
 	int suma = 0;
 	int espacios = numeros.length()/2;
-	for(int i = 0; i < numeros.length() - 1; i++){
-		if(numeros[i] == numeros[espacios]){
-			suma += numeros[i] - '0';
-		}
-		if(i >= evaluar){
-			if(numeros[i] == numeros[i-espacios]){
-				suma += numeros[i] - "0";
-			}
+	for(int i = 0; i < numeros.length()/2 - 1; i++){
+		if(numeros[i] == numeros[espacios+i]){
+			suma += numeros[i] - '0'*2;
 		}
 	}
 	cout << "La suma es: "<<suma<<endl;
