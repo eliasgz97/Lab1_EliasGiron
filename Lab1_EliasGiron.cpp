@@ -33,7 +33,7 @@ void captcha2 (string numeros){
 	cout << "La suma es: "<<suma<<endl;
 }
 void numero_perfecto(int numero){
-	int suma = 0, perfecto_menor = 0;
+	int suma = 0, a_evaluar = 0, suma2 = 0, perfecto_menor = 0;
 	string factores = "";
 	for(int i = 1; i < numero; i++){
 		if (numero % i == 0){
@@ -45,16 +45,22 @@ void numero_perfecto(int numero){
 		cout <<"El numero "<<numero<<" es perfecto"<<" y sus factores son: "<<factores;
 	} else {
 		for(int i = 1; i < numero; i++){
-			perfecto_menor = numero - i;
-			for (int j = 1; j < perfecto_menor; j++){
-				if(perfecto_menor % i == 0){
-                                	perfecto_menor += i;
+			a_evaluar = numero - i;
+			for (int j = 1; j < a_evaluar; j++){
+				if(a_evaluar % i == 0){
+                                	suma2 += i;
 				}
                         }
+			if(suma2 == a_evaluar){
+				perfecto_menor = a_evaluar;
+				i = numero;
+			} else {
+				suma2 = 0;
+			}
 			
 			
 		}
-	cout <<"El numero no es perfecto"<<" pero el numero perfecto más cercano es: "<< perfecto_menor<<endl;
+		cout <<"El numero no es perfecto"<<" pero el numero perfecto más cercano es: "<< perfecto_menor<<endl;
 	}
 
 }
