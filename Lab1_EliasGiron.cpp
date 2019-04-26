@@ -7,11 +7,32 @@ using std::string;
 
 void captcha (string numeros){
 	int suma = 0;
+
 	for(int i = 0; i < numeros.length()-1; i++){
 			if(numeros[i] == numeros[i+1]){
 				suma += numeros[i] - '0';
 			}
+			if(i == numeros.length()-1){
+				if(numeros[0] == numeros[i]){
+					suma += numeros[i] - '0';
+				}
+			}
 				
+	}
+	cout << "La suma es: "<<suma<<endl;
+}
+void captcha2 (string numeros){
+	int suma = 0;
+	int espacios = numeros.length()/2;
+	for(int i = 0; i < numeros.length() - 1; i++){
+		if(numeros[i] == numeros[espacios]){
+			suma += numeros[i] - '0';
+		}
+		if(i >= evaluar){
+			if(numeros[i] == numeros[i-espacios]){
+				suma += numeros[i] - "0";
+			}
+		}
 	}
 	cout << "La suma es: "<<suma<<endl;
 }
@@ -45,7 +66,14 @@ int main(){
 						captcha(numeros);
 					break;
 					case 2:
-						
+						cout <<"Ingrese una cadena de numeros: ";
+                                                cin >> numeros;
+                                                while (numeros.length()%2 != 0){
+                                                        cout <<"Ingrese una cadena de numeros par: ";
+                                                        cin >> numeros;
+                                                }
+                                                captcha2(numeros);
+
 					break;
 				}
 		 	break;
