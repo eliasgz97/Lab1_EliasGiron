@@ -64,6 +64,9 @@ void numero_perfecto(int numero){
 	}
 
 }
+void permutaciones(){
+
+}
 
 int main(){
 	char respuesta = 'S';
@@ -118,6 +121,7 @@ int main(){
 		 	case 3:
 				cout <<"Ingrese una cadena: "<<endl;
 				cin >> caracteres;
+				permutaciones(caracteres);
 		 	break;
 
 	 	}
