@@ -47,8 +47,8 @@ void numero_perfecto(int numero){
 		for(int i = 1; i < numero; i++){
 			a_evaluar = numero - i;
 			for (int j = 1; j < a_evaluar; j++){
-				if(a_evaluar % i == 0){
-                                	suma2 += i;
+				if(a_evaluar % j == 0){
+                                	suma2 += j;
 				}
                         }
 			if(suma2 == a_evaluar){
