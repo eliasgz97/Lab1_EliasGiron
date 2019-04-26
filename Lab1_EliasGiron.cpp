@@ -26,11 +26,27 @@ void captcha2 (string numeros){
 	int espacios = numeros.length()/2;
 	for(int i = 0; i < numeros.length()/2; i++){
 		if(numeros[i] == numeros[espacios+i]){
-			suma += (numeros[i] - '0')+(numeros[i] - '0');
+			suma += (numeros[i] - '0')*(2);
 
 		}
 	}
 	cout << "La suma es: "<<suma<<endl;
+}
+void numero_perfecto(int numero){
+	int suma = 0;
+	string factores = "";
+	for(int i = 1; i < numero; i++){
+		if (6 % i == 0){
+			suma += i;
+			factores += std::to_string(i)+", ";
+		}
+	}
+	if (suma == numero){
+		cout <<"El numero "<<numero<<" es perfecto"<<" y sus factores son: "<<factores;
+	} else {
+		cout <<"El numero no es perfecto"<<endl;
+	}
+
 }
 
 int main(){
@@ -76,6 +92,11 @@ int main(){
 		 	case 2:
 				cout << "Ingrese un numero: ";
 				cin >> numero;
+				while (numero < 0){
+					cout << "Ingrese un numero positivo";
+					cin >> numero;
+				}
+				numero_perfecto(numero);
 
 		 	break;
 		 	case 3:
